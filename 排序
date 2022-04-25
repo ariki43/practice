@@ -1,0 +1,23 @@
+public class Main {
+    public static void main(String[] args) {
+    int arr[]=new int[]{0,3,6,5,9,8,7,1,4};
+    test(arr);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+        }
+    }
+    public static void test(int []arr){
+        for (int i = 0; i < arr.length-1; i++) {
+            int min=arr[i],pos=i;//pos记录位置
+            for (int j = i+1; j <arr.length ; j++) {//遍历找出最大值或最小值,从i+1开始，因为前面已经排好就不用再遍历
+                if(arr[j]<min){
+                    min=arr[j];
+                    pos=j;
+                }
+            }
+            int temp=arr[i];
+            arr[i]=arr[pos];
+            arr[pos]=temp;
+        }
+        }
+}
