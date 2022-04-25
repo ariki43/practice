@@ -1,0 +1,24 @@
+public class Main {
+    public static void main(String[] args) {
+        int[]arr=new int[]{1,2,5,6,4,7,8,9,56,45,89,78};
+     test(arr);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]+"");
+        }
+    }
+    public static void test(int []arr){
+        for (int i = 0; i <arr.length ; i++) {
+            boolean b=true;//有序，不发生交换,就结束这个循环
+        for (int j = 0; j <arr.length-1 -i; j++) {//不用再管已经排好了的数，减少了遍历的幅度
+            if (arr[j]>arr[j+1]){
+                b=false;// 如果不整齐，发生交换
+                int temp;
+                temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+            }
+          }
+        if(b) break;//如果b是true，那就跳出，这里的if（b）是默认b是true。
+        }
+}
+}
