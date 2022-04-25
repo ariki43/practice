@@ -1,0 +1,20 @@
+public class Main {
+    public static void main(String[] args) {
+        int[]arr=new int[]{1,2,4,7,8,9,56,45,89,78};
+     test(arr);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i]+"");//（这里的print不同于println，println用于打印竖着的文本内容，print就是普通的横着打印）
+        }
+    }
+    public static void test(int []arr) {
+        for (int i = 1; i < arr.length; i++) {//这样的插入就可以省略第一个元素，因为第一个元素不需要排序
+            int temp=arr[i];//把要排序的牌拿到手
+            int j=i-1;
+            while(j>=0&&temp<arr[j]){//不知道要循环多少次，更推荐用while，for需要循环次数,j>=0,要停下来
+                arr[j+1]=arr[j];//本来在arr[j]前面的arr[j+1]被arr[j]所覆盖
+                j--;//arr[i]<arr[i-1]就继续往前走
+            }
+            arr[j+1]=temp;
+        }
+    }
+}
